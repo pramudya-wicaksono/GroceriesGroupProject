@@ -25,18 +25,16 @@ class Stores:
 
   def get_price(self):
     return self.price
+  
+  def show_list(self, price_data):
+	  print("---------------- Groceries ----------------")
+	  print("Available items:")
+	  for item_number, item_info in price_data.items():
+		  item_name = item_info["Item"]
+		  print(f"{item_number}: {item_name}")
 
-  def set_Target(self, new_Target):
-    self.Target = new_Target
 
-  def set_Aldi(self, new_Aldi):
-    self.Aldi = new_Aldi
 
-  def set_Walmart(self, new_Walmart):
-    self.Walmart = new_Walmart
-
-  def set_item(self, new_item):
-    self.item = new_item
 
   def __str__():
     msg = f"Sucessfully added {self.item} to the cart"

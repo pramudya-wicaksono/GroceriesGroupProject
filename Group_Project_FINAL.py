@@ -33,15 +33,15 @@ def budget_cart_calc():
 # Groceries menu
 def groceries_menu():
     print("---------------- Groceries ----------------")
-    print(" 1) Shop All Stores")
-    print(" 2) Shop by Stores")
-    print(" 3) Quit")
+    print(" 1) Shop Existing Items")
+    print(" 2) Add New Items")
+    print(" 3) Average price of Item")
+    print(" 4) Quit")
 
-def by_store_menu():
-    print("------------- Available Stores -------------")
-    print(" 1) Target")
-    print(" 2) Aldi")
-    print(" 3) Walmart")
+
+        
+        
+
 
 # Budget menu
 def budget_menu():
@@ -149,6 +149,9 @@ def show_cart(cart):
         print("cart is empty")
 
 
+def show_list_by_store():
+    for id in price_data:
+        print(f"{id})", price_data[id].get_name())
 
 def find_cheapest_store(item_info):
     cheapest_store = None
@@ -224,27 +227,35 @@ while not quit_program:
                     break
 
         elif groceries_choice == 2:
-            by_store_menu()
-            store_input = int(input("Please enter choice with corresponding number:"))
-            if store_input == 1:
-                
-                show_list(price_data)
-                while True:
-                    print("type done when you are done adding groceries, and exit to quit program")
-                    Target_input = input("Please enter choice with corresponding number:")
-                    if Target_input.isnumeric() == True:
-	                    pass                                            
-                        
-                    elif Target_input == "done":
-                        show_cart(cart)
-                        break
-                    elif Target_input == "quit":
-                        say_goodbye()
-                        quit_program = True
-                
+            while True:
+                print("type done when you are finish adding custom item to the cart")
+                item_input = input("Item name:")
+                store_input = input("Store (T for Target, W for Walmart, A for Aldi:")
+                if store_input.lower() == "T":
+                    #put getters for Target here
+                    price_input = float(input("Price:"))
+                    pass
+                elif store_input.lower() == "W":
+                    #put getters for Walmart here
+                    price_input = float(input("Price:"))
+                    pass
+                elif store_input.lower() == "A":
+                    #put getters for Aldi here
+                    price_input = float(input("Price:"))
+                    pass
+                elif store_input.lower() == "done":
+                    break
+                    
+        elif groceries_choice == 3:
+            show_list(price_data)
+            while True:
+                avg_item_input = int(input("Please enter choice with corresponding number"))
+                if avg_item_input.isnumeric():
+                    #put average calculation here
+                    pass
                 # PUT GETTERS HERE
 
-        elif groceries_choice == 3:
+        elif groceries_choice == 4:
             say_goodbye()
             quit_program = True
 

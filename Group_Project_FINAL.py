@@ -148,6 +148,8 @@ def show_cart(cart):
     else:
         print("cart is empty")
 
+
+
 def find_cheapest_store(item_info):
     cheapest_store = None
     cheapest_price = float('inf')
@@ -179,12 +181,13 @@ def calculate_cheapest_option(item_number, quantity):
     else:
         print("Item not found in the database.")
 
-from storesclass_py import Stores
+from storesclass_py import Item
 grocery_stores = ("Target", "Aldi", "Walmart")
 total_budget = 0
 total_cart_cost = 0
 quit_program = False
 price_data = {}
+groceries_by_store = []
 while not quit_program:
     txtconverter(price_data)
     menu_interface()
@@ -224,7 +227,21 @@ while not quit_program:
             by_store_menu()
             store_input = int(input("Please enter choice with corresponding number:"))
             if store_input == 1:
-                pass
+                
+                show_list(price_data)
+                while True:
+                    print("type done when you are done adding groceries, and exit to quit program")
+                    Target_input = input("Please enter choice with corresponding number:")
+                    if Target_input.isnumeric() == True:
+	                    pass                                            
+                        
+                    elif Target_input == "done":
+                        show_cart(cart)
+                        break
+                    elif Target_input == "quit":
+                        say_goodbye()
+                        quit_program = True
+                
                 # PUT GETTERS HERE
 
         elif groceries_choice == 3:

@@ -7,36 +7,30 @@ Original file is located at
     https://colab.research.google.com/drive/1fJAExTK8vxBTi929TmeqhfuEab8afYLa
 """
 
-class Stores:
-  def __init__ (self, item, Target, Aldi, Walmart):
-    self.item = item
-    self.Target = Target
-    self.Aldi = Aldi
-    self.Walmart = Walmart
+class Item:
+  def __init__ (self, _name, _Target_price, _Aldi_price, _Walmart_price):
+    self.name = _name
+    self.Target_price = _Target_price
+    self.Aldi_price = Aldi_price
+    self.Walmart_price = Walmart_price
 
-  def get_Target(self):
-    return self.Target
+  def get_Target_price(self):
+    return self.Target_price
 
-  def get_Aldi(self):
-    return self.Aldi
+  def get_Aldi_price(self):
+    return self.Aldi_price
 
-  def get_Walmart(self):
-    return self.Walmart
-
-  def get_price(self):
-    return self.price
-  
-  def show_list(self, price_data):
-	  print("---------------- Groceries ----------------")
-	  print("Available items:")
-	  for item_number, item_info in price_data.items():
-		  item_name = item_info["Item"]
-		  print(f"{item_number}: {item_name}")
-
+  def get_Walmart_price(self):
+    return self.Walmart_price
+   
+  def add_to_cart_by_store(self):
+	  
+t
+	  
 
 
 
   def __str__():
-    msg = f"Sucessfully added {self.item} to the cart"
+    msg = f"Sucessfully added {self.name} to the cart"
     return msg
 

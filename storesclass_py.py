@@ -33,10 +33,10 @@ class Item:
 
 
     def __str__(self):
-        msg = f"Successfully added {self.name} to the cart"
+        msg = f"Successfully added {self._name} to the cart"
         return msg
         
-    def calculate_average_price(self, item_info):
+    def calculate_average_price(item_info):
         total_price = 0
         store_count = 0
 

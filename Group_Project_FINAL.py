@@ -15,6 +15,7 @@ Rei Onishi
 Groceries Budgeting and Price Comparison Project
 10/21/2023
 '''
+from storesclass_py import *
 
 # Main Menu Interface
 def menu_interface():
@@ -89,6 +90,7 @@ def txtconverter(price_data):
             
             # Add the item data to the price_data dictionary
             price_data[item_id] = item_dict
+
 
 def groceries_calculation(total_cart_cost, total_budget):
     # Would not read total_cart_cost
@@ -184,7 +186,7 @@ def calculate_cheapest_option(item_number, quantity):
     else:
         print("Item not found in the database.")
 
-from storesclass_py import Item
+from storesclass_py import *
 grocery_stores = ("Target", "Aldi", "Walmart")
 total_budget = 0
 total_cart_cost = 0
@@ -224,24 +226,39 @@ while not quit_program:
                     break
                 elif groceries_item_input.lower() == "done":
                     show_cart(cart)
-                    break
+                break
 
+### done doesn't break the loop
         elif groceries_choice == 2:
             while True:
                 print("type done when you are finish adding custom item to the cart")
-                item_input = input("Item name:")
+                item_input = input("Item name:")  
                 store_input = input("Store (T for Target, W for Walmart, A for Aldi:")
-                if store_input.lower() == "T":
-                    #put getters for Target here
+                ###test
+                new_item = Item(item_input, 0, 0, 0)
+                
+                if store_input == "T":
                     price_input = float(input("Price:"))
+                    quantity_input = int(input("Input quantity:"))
+                    new_item.set__Target_price = price_input
+                    new_item.set__name = item_input
+                    cart.append((item_input, quantity_input, price_input, "Target"))
                     pass
-                elif store_input.lower() == "W":
+                elif store_input == "W":
                     #put getters for Walmart here
                     price_input = float(input("Price:"))
+                    quantity_input = int(input("Input quantity:"))
+                    new_item.set__Target_price = price_input
+                    new_item.set__name = item_input
+                    cart.append((item_input, quantity_input, price_input, "Walmart"))
                     pass
-                elif store_input.lower() == "A":
+                elif store_input == "A":
                     #put getters for Aldi here
                     price_input = float(input("Price:"))
+                    quantity_input = int(input("Input quantity:"))
+                    new_item.set__Target_price = price_input
+                    new_item.set__name = item_input
+                    cart.append((item_input, quantity_input, price_input, "Aldi"))
                     pass
                 elif store_input.lower() == "done":
                     break
@@ -250,8 +267,8 @@ while not quit_program:
             show_list(price_data)
             while True:
                 avg_item_input = int(input("Please enter choice with corresponding number"))
-                if avg_item_input.isnumeric():
-                    #put average calculation here
+                if avg_item_input:#.isnumeric():
+                    #####################calculate_average_price(price_data)
                     pass
                 # PUT GETTERS HERE
 

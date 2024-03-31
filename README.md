@@ -1,7 +1,8 @@
 Groceries Budgeting and Price Comparison Program
 
 This Python program allows users to manage their groceries, budgets, and compare prices across different stores. It provides a menu-driven interface for easy interaction and offers various functionalities such as shopping, adding custom items, and calculating budgets.
-Features
+
+Features:
 
     Menu Interface: Users are greeted with a menu interface upon running the program, which presents options for managing budgets, groceries, and performing calculations.
 
